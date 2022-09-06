@@ -1,6 +1,7 @@
 # https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $background ~/.local/share/backgrounds/web_first_images_release.png
 
 font pango:monospace 8
 
@@ -8,6 +9,7 @@ exec --no-startup-id picom -b
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id feh --bg-scale $background
 exec_always --no-startup-id polybar
 exec --no-startup-id xdg-user-dirs-update
 
