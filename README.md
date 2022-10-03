@@ -23,7 +23,8 @@ Configure using `xinit`.
 
 - Test bluetooth
 - Test external monitor
-- Test keyboard
+- Test external keyboard
+- Persist touchpad settings
 - Ansible:
   - Automate keyboard layout settings
   - Intel graphics config to Ansible
