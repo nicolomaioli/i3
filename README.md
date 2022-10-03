@@ -21,19 +21,18 @@ Configure using `xinit`.
 
 ## TODO
 
-- Test videoconferencing
 - Test bluetooth
-- Test screensharing
 - Test external monitor
 - Test keyboard
 - Ansible:
   - Automate keyboard layout settings
   - Intel graphics config to Ansible
   - Install bluetooth applet
-- Bluetooth applet
+  - Additional dependencies:
+    - xinit
+    - blueman
 - Volume keys
 - Brightness keys
 - Microphone key
-- Vim shortcuts
 - Mod4+Control+q lock screen
 - Autostart (terminal, chrome, slack)
