@@ -20,6 +20,8 @@ localectl set-x11-keymap "gb,us" "" "" "caps:ctrl_modifier,grp:alt_space_toggle"
 - Test videoconferencing
 - Test bluetooth
 - Test screensharing
+- Test external monitor
+- Test keyboard
 - Ansible:
   - Automate keyboard layout settings
   - Intel graphics config to Ansible
@@ -30,3 +32,4 @@ localectl set-x11-keymap "gb,us" "" "" "caps:ctrl_modifier,grp:alt_space_toggle"
 - Microphone key
 - Vim shortcuts
 - Mod4+Control+q lock screen
+- Autostart (terminal, chrome, slack)
