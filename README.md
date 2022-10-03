@@ -32,5 +32,4 @@ Configure using `xinit`.
     - xinit
     - blueman
     - brightnessctl
-- Mod4+Control+q lock screen
 - Autostart (terminal, chrome, slack)

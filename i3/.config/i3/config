@@ -45,6 +45,7 @@ bindsym $mod+p exec killall polybar
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec ~/.config/rofi/scripts/exit.sh
+bindsym $mod+Control+q exec ~/.config/rofi/scripts/lock.sh
 
 ## Volume
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
