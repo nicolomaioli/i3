@@ -15,6 +15,10 @@ localectl set-x11-keymap "gb,us" "" "" "caps:ctrl_modifier,grp:alt_space_toggle"
 - Caps is an additional ctrl
 - Alt + Space toggles layout
 
+## Touchpad
+
+Configure using `xinit`.
+
 ## TODO
 
 - Test videoconferencing
