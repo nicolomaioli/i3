@@ -17,7 +17,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id xdg-user-dirs-update
 exec_always --no-startup-id feh --bg-scale $background
-exec_always --no-startup-id polybar
+exec_always --no-startup-id sleep 2 && polybar
 
 # Windows
 default_border pixel 1
