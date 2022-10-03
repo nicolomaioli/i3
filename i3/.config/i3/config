@@ -1,7 +1,7 @@
 # https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $background ~/.local/share/backgrounds/web_first_images_release.png
+set $background ~/.local/share/backgrounds/3829125.jpg
 
 font pango:monospace 8
 
