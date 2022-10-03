@@ -31,8 +31,6 @@ Configure using `xinit`.
   - Additional dependencies:
     - xinit
     - blueman
-- Volume keys
-- Brightness keys
-- Microphone key
+    - brightnessctl
 - Mod4+Control+q lock screen
 - Autostart (terminal, chrome, slack)
