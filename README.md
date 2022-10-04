@@ -7,5 +7,4 @@ and configure `i3`.
 
 - Test bluetooth
 - Test external monitor
-- Test external keyboard
 - Autostart (terminal, chrome, slack)
