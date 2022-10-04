@@ -23,6 +23,7 @@ set $ws10 "10"
 
 set $term /usr/bin/alacritty
 set $web /usr/bin/google-chrome-stable
+set $menu "rofi -modi drun,run -show drun"
 
 # Dracula theme
 # class                 border  bground text    indicator child_border
@@ -58,7 +59,8 @@ bindsym $mod+a focus parent
 # Bindings
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec $menu
+bindsym XF86Search exec $menu
 bindsym $mod+b split h
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
