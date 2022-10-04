@@ -1,10 +1,11 @@
 #!/bin/bash
 
+IMAGE=/usr/share/backgrounds/doomguy/rickroll_4k.png
 cmd=$(echo -e "lock\nlogout\nreboot\nshutdown" | rofi -dmenu -p system)
 
 case $cmd in
 	lock)
-		~/.config/rofi/scripts/lock.sh
+		i3lock -i $IMAGE
 		;;
 	logout)
 		i3-msg exit

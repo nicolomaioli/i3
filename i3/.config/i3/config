@@ -2,7 +2,8 @@
 
 # Vars
 set $mod Mod4
-set $background ~/.local/share/backgrounds/3829125.jpg
+set $bg ~/.local/share/backgrounds/3829125.jpg
+set $lock_bg /usr/share/backgrounds/doomguy/rickroll_4k.png
 set $left h
 set $down j
 set $up k
@@ -21,11 +22,11 @@ client.background       #FFFFFF
 # Autostart
 exec --no-startup-id picom -b
 exec --no-startup-id dex-autostart --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $lock_bg --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id xdg-user-dirs-update
-exec_always --no-startup-id feh --bg-scale $background
+exec_always --no-startup-id feh --bg-scale $bg
 exec_always --no-startup-id polybar
 
 # Windows
@@ -54,7 +55,7 @@ bindsym $mod+p exec killall polybar
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec ~/.config/rofi/scripts/exit.sh
-bindsym $mod+Control+q exec ~/.config/rofi/scripts/lock.sh
+bindsym $mod+Control+q exec i3lock -i $lock_bg
 
 ## Volume
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
