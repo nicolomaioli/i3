@@ -41,6 +41,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $lock_bg --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
+exec --no-startup-id volumeicon
 exec --no-startup-id xdg-user-dirs-update
 exec --no-startup-id $term --class term,term
 exec_always --no-startup-id feh --bg-scale $bg
