@@ -40,7 +40,7 @@ battery all {
 }
 
 disk "/" {
-	format = " %avail"
+	format = " %avail"
 }
 
 load {
