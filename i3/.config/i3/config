@@ -9,7 +9,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-font pango:monospace 8
+font pango:FiraCode Nerd Font 10
 
 set $ws1 "1"
 set $ws2 "2"
@@ -27,13 +27,13 @@ set $web /usr/bin/google-chrome-stable
 set $menu "rofi -modi drun,run -show drun"
 
 # Dracula theme
-# class                 border  bground text    indicator child_border
-client.focused          #83CAFA #51A2DA #FFFFFF #83CAFA   #51A2DA
-client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
-client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
-client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
-client.background       #FFFFFF
+# class                   border    bground   text      indicator child_border
+client.focused            #83CAFA   #51A2DA   #FFFFFF   #83CAFA   #51A2DA
+client.focused_inactive   #8C8C8C   #4C4C4C   #FFFFFF   #4C4C4C   #8C8C8C
+client.unfocused          #4C4C4C   #222222   #888888   #292D2E   #222222
+client.urgent             #EC69A0   #DB3279   #FFFFFF   #DB3279   #DB3279
+client.placeholder        #000000   #0C0C0C   #FFFFFF   #000000   #0C0C0C
+client.background         #FFFFFF
 
 # Autostart
 exec --no-startup-id picom -b
@@ -44,7 +44,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id xdg-user-dirs-update
 exec --no-startup-id $term --class term,term
 exec_always --no-startup-id feh --bg-scale $bg
-exec_always --no-startup-id polybar
 
 ## Scratchpad
 for_window [class="term"] move scratchpad
@@ -72,7 +71,6 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym $mod+p exec killall polybar
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec ~/.config/rofi/scripts/exit.sh
@@ -135,17 +133,38 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Modes
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
+
+# Bar
+bar {
+	i3bar_command i3bar --transparency
+	colors {
+		background #00000000
+		statusline #ffffff
+		separator  #ffffff
+
+#       colorclass         border     background text
+		focused_workspace  #00000000  #ffffff    #333333
+		active_workspace   #00000000  #00000000  #ffffff
+		inactive_workspace #00000000  #00000000  #ffffff
+		urgent_workspace   #00000000  #00000000  #ff0000
+		binding_mode       #00000000  #00000000  #ffffff
+	}
+	position top
+	tray_output primary
+	tray_padding 3
+	status_command i3status
+}
