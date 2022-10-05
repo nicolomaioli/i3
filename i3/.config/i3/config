@@ -79,7 +79,7 @@ bindsym $mod+Shift+e exec ~/.config/rofi/scripts/exit.sh
 bindsym $mod+Control+q exec i3lock -i $lock_bg
 
 ## Scratchpad
-bindsym $mod+t [class="term"] scratchpad show; move position center
+bindsym $alt+t [class="term"] scratchpad show; move position center
 
 ## Volume
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
