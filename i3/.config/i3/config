@@ -3,7 +3,7 @@
 # Vars
 set $mod Mod4
 set $alt Mod1
-set $bg ~/.local/share/backgrounds/3829125.jpg
+set $bg /usr/share/backgrounds/doomguy/3829125.jpg
 set $lock_bg /usr/share/backgrounds/doomguy/rickroll_4k.png
 set $left h
 set $down j
