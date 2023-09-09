@@ -3,13 +3,9 @@
 # Vars
 set $mod Mod4
 set $alt Mod1
-set $bg /usr/share/backgrounds/doomguy/3829125.jpg
-set $lock_bg /usr/share/backgrounds/doomguy/rickroll_4k.png
-set $left h
-set $down j
-set $up k
-set $right l
-font pango:FiraCode Nerd Font 10
+set $bg /usr/share/backgrounds/mountains.jpg
+set $lock_bg /usr/share/backgrounds/rickroll_4k.png
+font pango:monospace 12
 
 set $ws1 "1"
 set $ws2 "2"
@@ -22,38 +18,33 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-set $term /usr/bin/alacritty
+set $term i3-sensible-terminal
 set $web /usr/bin/google-chrome-stable
-set $menu "rofi -modi drun,run -show drun"
+set $menu dmenu_run -fn 'monospace-14'
 
-# Dracula theme
-# class                   border    bground   text      indicator child_border
-client.focused            #83CAFA   #51A2DA   #FFFFFF   #83CAFA   #51A2DA
-client.focused_inactive   #8C8C8C   #4C4C4C   #FFFFFF   #4C4C4C   #8C8C8C
-client.unfocused          #4C4C4C   #222222   #888888   #292D2E   #222222
-client.urgent             #EC69A0   #DB3279   #FFFFFF   #DB3279   #DB3279
-client.placeholder        #000000   #0C0C0C   #FFFFFF   #000000   #0C0C0C
-client.background         #FFFFFF
+set $gap 5
+
+# Theme
+# class                 border  bground text    indicator child_border
+client.focused          #83CAFA #51A2DA #FFFFFF #83CAFA   #51A2DA
+client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
+client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
+client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+client.background       #FFFFFF
 
 # Autostart
-exec --no-startup-id picom -b
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $lock_bg --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id volumeicon
 exec --no-startup-id xdg-user-dirs-update
-exec --no-startup-id $term --class term,term
 exec_always --no-startup-id feh --bg-scale $bg
-
-## Scratchpad
-for_window [class="term"] move scratchpad
+exec_always --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP
 
 # Windows
-default_border pixel 1
-default_floating_border pixel 1
-gaps inner 5
-gaps outer 5
+gaps inner $gap
+gaps outer $gap
 
 ## Floating window size
 for_window [class="Xdg-desktop-portal-gtk"] resize set 640 480
@@ -77,11 +68,11 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec ~/.config/rofi/scripts/exit.sh
-bindsym $mod+Control+q exec i3lock -i $lock_bg
-
-## Scratchpad
-bindsym $alt+t [class="term"] scratchpad show; move position center
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/exit.sh
+bindsym $mod+c exec ~/.config/i3/scripts/code.sh
+bindsym $mod+l exec ~/.config/i3/scripts/lock.sh
+bindsym $mod+Shift+b exec $web
+bindsym $mod+p move workspace to output right
 
 ## Volume
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -90,23 +81,15 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMicMute exec pactl set-source-mute 0 toggle
 
 ## Brightness
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 ## Window bindings
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -137,14 +120,14 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Modes
 mode "resize" {
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
+	bindsym h resize shrink width 5 px or 5 ppt
+	bindsym j resize grow height 5 px or 5 ppt
+	bindsym k resize shrink height 5 px or 5 ppt
+	bindsym l resize grow width 5 px or 5 ppt
+	bindsym Left resize shrink width 5 px or 5 ppt
+	bindsym Down resize grow height 5 px or 5 ppt
+	bindsym Up resize shrink height 5 px or 5 ppt
+	bindsym Right resize grow width 5 px or 5 ppt
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 	bindsym $mod+r mode "default"
@@ -152,23 +135,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Bar
 bar {
-	i3bar_command i3bar --transparency
-	colors {
-		background #00000000
-		statusline #ffffff
-		separator  #ffffff
-
-#       colorclass         border     background text
-		focused_workspace  #00000000  #ffffff    #333333
-		active_workspace   #00000000  #00000000  #ffffff
-		inactive_workspace #00000000  #00000000  #ffffff
-		urgent_workspace   #00000000  #00000000  #ff0000
-		binding_mode       #00000000  #00000000  #ffffff
-	}
-	position top
-	tray_output primary
-	tray_padding 3
 	status_command i3status
+	position top
 }

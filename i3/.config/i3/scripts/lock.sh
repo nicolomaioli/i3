@@ -8,6 +8,6 @@ then
 	rm $IMAGE
 fi
 
-scrot $IMAGE
+scrot -z $IMAGE
 convert -scale 10% -scale 1000% $IMAGE $IMAGE
 i3lock -i $IMAGE
