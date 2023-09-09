@@ -3,7 +3,7 @@
 # Vars
 set $mod Mod4
 set $alt Mod1
-set $bg /usr/share/backgrounds/mountains.jpg
+set $bg /usr/share/backgrounds/forest2.jpg
 set $lock_bg /usr/share/backgrounds/rickroll_4k.png
 font pango:monospace 12
 
