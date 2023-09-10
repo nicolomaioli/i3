@@ -19,7 +19,8 @@ set $ws10 "10"
 
 set $term i3-sensible-terminal
 set $web /usr/bin/google-chrome-stable
-set $menu dmenu_run -fn 'Hack Nerd Font-14' -p 'Run'
+set $dmenu_run dmenu_run -fn 'Hack Nerd Font-14' -p 'Run'
+set $dmenu dmenu -fn 'Hack Nerd Font-14' -p
 set $lock i3lock -ti /usr/share/backgrounds/rickroll_4k.png
 
 set $gap 5
@@ -65,8 +66,8 @@ bindsym $mod+a focus parent
 # Bindings
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec $menu
-bindsym XF86Search exec $menu
+bindsym $mod+d exec $dmenu_run
+bindsym XF86Search exec $dmenu_run
 bindsym $mod+b split h
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
@@ -75,11 +76,12 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/exit.sh
-bindsym $mod+c exec ~/.config/i3/scripts/code.sh
+bindsym $mod+Shift+e exec $HOME/.config/i3/scripts/exit.sh
+bindsym $mod+c exec $HOME/.config/i3/scripts/code.sh
 bindsym $mod+l exec $lock
 bindsym $mod+Shift+b exec $web
 bindsym $mod+p move workspace to output right
+bindsym $alt+space exec setxkbmap $(echo -e "gb\nus" | $dmenu 'Keymap')
 
 ## Volume
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -143,6 +145,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-	status_command i3status
+	status_command $HOME/.config/i3/scripts/bar.sh
 	position top
 }
