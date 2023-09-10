@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cmd=$(echo -e "logout\nreboot\nshutdown" | dmenu -fn 'monospace-14')
+cmd=$(echo -e "logout\nreboot\nshutdown" | dmenu -fn 'monospace-14' -p 'Exit')
 
 case $cmd in
 	logout)

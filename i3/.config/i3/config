@@ -20,9 +20,10 @@ set $ws10 "10"
 
 set $term i3-sensible-terminal
 set $web /usr/bin/google-chrome-stable
-set $menu dmenu_run -fn 'monospace-14'
+set $menu dmenu_run -fn 'monospace-14' -p 'Run'
 
 set $gap 5
+set $border 3
 
 # Theme
 # class                 border  bground text    indicator child_border
@@ -43,6 +44,12 @@ exec_always --no-startup-id feh --bg-scale $bg
 exec_always --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP
 
 # Windows
+
+## Remove window title bar, see https://i3wm.org/docs/userguide.html#default_border
+default_border pixel $border
+default_floating_border pixel $border
+
+## Gaps
 gaps inner $gap
 gaps outer $gap
 
