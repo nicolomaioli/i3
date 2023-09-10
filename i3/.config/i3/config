@@ -4,8 +4,7 @@
 set $mod Mod4
 set $alt Mod1
 set $bg /usr/share/backgrounds/forest2.jpg
-set $lock_bg /usr/share/backgrounds/rickroll_4k.png
-font pango:monospace 12
+font pango:Hack Nerd Font 12
 
 set $ws1 "1"
 set $ws2 "2"
@@ -20,7 +19,8 @@ set $ws10 "10"
 
 set $term i3-sensible-terminal
 set $web /usr/bin/google-chrome-stable
-set $menu dmenu_run -fn 'monospace-14' -p 'Run'
+set $menu dmenu_run -fn 'Hack Nerd Font-14' -p 'Run'
+set $lock i3lock -ti /usr/share/backgrounds/rickroll_4k.png
 
 set $gap 5
 set $border 3
@@ -36,7 +36,7 @@ client.background       #FFFFFF
 
 # Autostart
 exec --no-startup-id dex-autostart --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $lock_bg --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $lock
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id xdg-user-dirs-update
@@ -77,7 +77,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec ~/.config/i3/scripts/exit.sh
 bindsym $mod+c exec ~/.config/i3/scripts/code.sh
-bindsym $mod+l exec ~/.config/i3/scripts/lock.sh
+bindsym $mod+l exec $lock
 bindsym $mod+Shift+b exec $web
 bindsym $mod+p move workspace to output right
 
