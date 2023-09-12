@@ -23,7 +23,6 @@ set $dmenu_run dmenu_run -fn 'Hack Nerd Font-14' -p 'Run'
 set $dmenu dmenu -fn 'Hack Nerd Font-14' -p
 set $lock i3lock -ti /usr/share/backgrounds/rickroll_4k.png
 
-set $gap 5
 set $border 3
 
 # Theme
@@ -38,9 +37,9 @@ client.background       #FFFFFF
 # Autostart
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $lock
-exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
 exec --no-startup-id xdg-user-dirs-update
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id feh --bg-scale $bg
 exec_always --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP
 
@@ -49,10 +48,6 @@ exec_always --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP
 ## Remove window title bar, see https://i3wm.org/docs/userguide.html#default_border
 default_border pixel $border
 default_floating_border pixel $border
-
-## Gaps
-gaps inner $gap
-gaps outer $gap
 
 ## Floating window size
 for_window [class="Xdg-desktop-portal-gtk"] resize set 640 480
@@ -78,7 +73,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec $HOME/.config/i3/scripts/exit.sh
 bindsym $mod+c exec $HOME/.config/i3/scripts/code.sh
-bindsym $mod+l exec $lock
+bindsym $mod+semicolon exec $lock
 bindsym $mod+Shift+b exec $web
 bindsym $mod+p move workspace to output right
 bindsym $alt+space exec setxkbmap $(echo -e "gb\nus" | $dmenu 'Keymap')
@@ -94,11 +89,19 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 ## Window bindings
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
