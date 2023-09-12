@@ -3,7 +3,7 @@
 # Vars
 set $mod Mod4
 set $alt Mod1
-set $bg /usr/share/backgrounds/forest2.jpg
+set $bg /usr/share/backgrounds/mountains.jpg
 font pango:Hack Nerd Font 12
 
 set $ws1 "1"
