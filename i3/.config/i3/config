@@ -63,7 +63,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $dmenu_run
 bindsym XF86Search exec $dmenu_run
-bindsym $mod+b split h
+bindsym $mod+x split h
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
@@ -74,7 +74,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec $HOME/.config/i3/scripts/exit.sh
 bindsym $mod+c exec $HOME/.config/i3/scripts/code.sh
 bindsym $mod+semicolon exec $lock
-bindsym $mod+Shift+b exec $web
+bindsym $mod+b exec $web
 bindsym $mod+p move workspace to output right
 bindsym $alt+space exec setxkbmap $(echo -e "gb\nus" | $dmenu 'Keymap')
 
