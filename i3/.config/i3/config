@@ -42,6 +42,7 @@ exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id feh --bg-scale $bg
 exec_always --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Windows
 
@@ -146,8 +147,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-bar {
-	status_command $HOME/.config/i3/scripts/bar.sh
-	position top
-}
