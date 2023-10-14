@@ -11,14 +11,14 @@ general {
 	interval = 2
 }
 
+order += "tztime local"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "volume master"
-order += "tztime local"
 
 wireless _first_ {
-	format_up = "󰤨 %quality at %essid %ip"
+	format_up = "󰤨 %quality at %essid"
 	format_down = "󰤯"
 }
 
@@ -45,5 +45,5 @@ volume master {
 }
 
 tztime local {
-	format = "%a %d %b | %H:%M |"
+	format = "%a %d %b %H:%M"
 }

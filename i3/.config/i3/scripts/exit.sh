@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cmd=$(echo -e "logout\nreboot\nshutdown" | dmenu -fn 'Hack Nerd Font-14' -p 'Exit')
+cmd=$(echo -e "logout\nreboot\nshutdown" | dmenu -fn 'Hack Nerd Font-12' -p 'Exit')
 
 case $cmd in
 	logout)

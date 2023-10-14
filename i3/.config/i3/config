@@ -19,8 +19,8 @@ set $ws10 "10"
 
 set $term i3-sensible-terminal
 set $web /usr/bin/google-chrome-stable
-set $dmenu_run dmenu_run -fn 'Hack Nerd Font-14' -p 'Run'
-set $dmenu dmenu -fn 'Hack Nerd Font-14' -p
+set $dmenu_run dmenu_run -fn 'Hack Nerd Font-12' -p 'Run'
+set $dmenu dmenu -fn 'Hack Nerd Font-12' -p
 set $lock i3lock -ti /usr/share/backgrounds/rickroll_4k.png
 
 set $border 3
@@ -42,7 +42,6 @@ exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id feh --bg-scale $bg
 exec_always --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Windows
 
@@ -147,3 +146,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+bar {
+	status_command i3status
+	position bottom
+}
