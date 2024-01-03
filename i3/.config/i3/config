@@ -77,6 +77,7 @@ bindsym $mod+semicolon exec $lock
 bindsym $mod+b exec $web
 bindsym $mod+p move workspace to output right
 bindsym $alt+space exec setxkbmap $(echo -e "gb\nus" | $dmenu 'Keymap')
+bindsym Print exec xfce4-screenshooter
 
 ## Volume
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
