@@ -42,7 +42,7 @@ exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id feh --bg-scale $bg
 exec_always --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP
-exec_always --no-startup-id xrandr --output DisplayPort-1 --auto --left-of eDP
+exec_always --no-startup-id xrandr --output DisplayPort-1 --auto --right-of eDP
 
 # Windows
 
